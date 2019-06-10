@@ -1,0 +1,66 @@
+#include<bits/stdc++.h>
+using namespace std;
+int top=-1;
+int stak[3000];
+void push(int x,int n){
+ if(top==n-1){
+    cout<<"stack is full.overflow condition";
+ }
+ else{
+    top=top+1;
+    stak[top]=x;
+ }
+}
+bool isEmpty()
+{
+    if(top==-1)return true;
+    else return false;
+}
+void pop()
+{
+    if(isEmpty())
+        cout<<"stack is underflow condition!"<<endl;
+    else top--;
+}
+int size(){
+return top+1;
+}
+int topelement()
+{
+
+    return stak[top];
+}
+int main()
+{
+int n,a[1000],i;
+cin>>n;
+for(i=0;i<n;i++)
+    cin>>a[i];
+
+for(i=0;i<n;i++)
+{
+push(a[i],n);
+      cout<<"Current size of stack is "<<size()<<endl;
+     cout<<"Topelement "<< topelement()<<endl;
+}
+int sum=0;
+for(i=0;i<size();i++){
+    sum+=stak[i];
+}
+cout<<endl<<sum<<endl;
+///**this is pop operation
+ for(int i = 0 ; i < n;i++ ){
+            pop( );
+        cout << "Current size of stack is " << size( ) << endl ;
+            int tp=topelement();
+            if(tp==0)
+              cout<<"empty stack "<<endl;
+        else cout<<"top element "<<tp<<endl;
+ }
+ pop();
+  cout<<"Topelement "<< topelement()<<endl;
+  //*/
+}
+/*
+
+*/
